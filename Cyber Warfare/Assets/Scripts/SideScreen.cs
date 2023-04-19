@@ -14,7 +14,7 @@ public class SideScreen : MonoBehaviour
         leftWallCollider.transform.position = new Vector3(-screenWidth - leftWallCollider.size.x / 2f, 0f, 0f);
         rightWallCollider.transform.position = new Vector3(screenWidth + rightWallCollider.size.x / 2f, 0f, 0f);
 
-        //Destroy(this);
+        Destroy(this);
     }
 
    

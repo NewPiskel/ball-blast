@@ -2,14 +2,17 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
+    #region Singleton Game Instance;
+
     public static Game Instance;
 
-    private void Awake()
+    void Awake()
     {
         Instance = this;
         screenWidth = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0f, 0f)).x;
     }
 
-    [HideInInspector]public float screenWidth;
+    #endregion
 
+     [HideInInspector]public float screenWidth;
 }

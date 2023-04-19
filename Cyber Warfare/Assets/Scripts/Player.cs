@@ -43,15 +43,12 @@ public class Player : MonoBehaviour
     {
         if (isMoving)
         {
-
             rb.MovePosition (Vector2.Lerp (rb.position, pos, CannonSpeed * Time.fixedDeltaTime));
-            velocityX = pos.x - rb.position.x;
         }else{
             rb.velocity = Vector2.zero;
-            velocityX = 0f;
         }
 
-        
+        velocityX = rb.GetPointVelocity(rb.position).x;
         if (Mathf.Abs (velocityX) > 0.0f && Mathf.Abs (rb.position.x) < screenBounds)
         {
             motor.motorSpeed = velocityX * 150f;

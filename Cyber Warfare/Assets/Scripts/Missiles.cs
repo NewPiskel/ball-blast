@@ -47,7 +47,7 @@ public class Missiles : MonoBehaviour
     void PrepareMissiles(){
     
         missilesQueue = new Queue<GameObject>();
-        for (int i = 0; i < missilesCount; i++) {
+        for (int i = 0; i < missilesCount; /*i++*/) {
             g = Instantiate (missilePrefab, transform.position, Quaternion.identity, transform);
             g.SetActive (false);
             missilesQueue.Enqueue(g);
