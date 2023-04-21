@@ -3,15 +3,17 @@ using TMPro;
 
 public class Meteor : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rb;
-    [SerializeField] int health;
+    [SerializeField] protected Rigidbody2D rb;
+    [SerializeField] protected int health;
 
-    [SerializeField] TMP_Text textHealth;
-    [SerializeField] float jumpForce;
+    [SerializeField] protected TMP_Text textHealth;
+    [SerializeField] protected float jumpForce;
 
-    float[] leftAndRight = new float[2] { -1f, 1f };
+    protected float[] leftAndRight = new float[2] { -1f, 1f };
 
-    bool isShowing;
+    [HideInInspector] public bool isResultOfFission = true;
+
+    protected bool isShowing;
 
     void Start()
     {
@@ -19,12 +21,20 @@ public class Meteor : MonoBehaviour
         isShowing = true;
         rb.gravityScale = 0f;
 
-        float direction = leftAndRight[Random.Range (0,2)];
-        float screenOffset = Game.Instance.screenWidth * 1.3f;
-        transform.position = new Vector2(screenOffset * direction, transform.position.y);
+        if (isResultOfFission)
+        {
+            FallDown();
+        }
+        else
+        {
 
-        rb.velocity = new Vector2(-direction, 0f);
-        Invoke("FallDown", Random.Range(screenOffset - 2.5f, screenOffset - 1f));
+            float direction = leftAndRight[Random.Range(0, 2)];
+            float screenOffset = Game.Instance.screenWidth * 1.3f;
+            transform.position = new Vector2(screenOffset * direction, transform.position.y);
+
+            rb.velocity = new Vector2(-direction, 0f);
+            Invoke("FallDown", Random.Range(screenOffset - 2.5f, screenOffset - 1f));
+        }
     }
 
     void FallDown()
@@ -84,11 +94,11 @@ public class Meteor : MonoBehaviour
         }
         UpdateHealthUI();
     }
-    public void Die()
+    virtual protected void Die()
     {
         Destroy (gameObject);
     }
-    public void UpdateHealthUI()
+    protected void UpdateHealthUI()
     {
         textHealth.text = health.ToString();
     }

@@ -982,7 +982,8 @@ MonoBehaviour:
   - {fileID: 7282108913037684625, guid: fe2c5b73355a8b149b2d54ea405020cb, type: 3}
   - {fileID: 7282108913037684625, guid: b9081f39319a0824792b866b29bcb2e4, type: 3}
   - {fileID: 7282108913037684625, guid: 06007da8bc74094499882662aa036e33, type: 3}
-  meteorsCount: 10
+  - {fileID: 7282108913037684625, guid: 4ebbad56652e3364c9c3ff0fcf92e932, type: 3}
+  meteorsCount: 5
   spawnDelay: 3
 --- !u!1 &1776749450
 GameObject:

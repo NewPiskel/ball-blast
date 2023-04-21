@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class MeteorSpawner : MonoBehaviour
 {
@@ -8,6 +9,18 @@ public class MeteorSpawner : MonoBehaviour
     [SerializeField] float spawnDelay;
 
     GameObject[] meteors;
+
+    #region Singleton class: MeteorSpawner
+
+    public static MeteorSpawner Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
+    #endregion
+
 
     void Start()
     {
@@ -31,6 +44,7 @@ public class MeteorSpawner : MonoBehaviour
         for(int i = 0; i < meteorsCount; i++)
         {
             meteors[i] = Instantiate(meteorPrefabs[Random.Range(0, prefabsCount)], transform);
+            meteors[i].GetComponent<Meteor>().isResultOfFission = false;
             meteors[i].SetActive(false);
         }
     }
