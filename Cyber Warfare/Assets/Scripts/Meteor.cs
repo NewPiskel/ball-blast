@@ -15,6 +15,9 @@ public class Meteor : MonoBehaviour
 
     protected bool isShowing;
 
+    
+
+
     void Start()
     {
         UpdateHealthUI();
@@ -79,8 +82,8 @@ public class Meteor : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             rb.AddTorque(-rb.angularVelocity * 4f);
         }
-            
-        
+
+
     }
     public void TakeDamage(int damage)
     {
@@ -96,7 +99,7 @@ public class Meteor : MonoBehaviour
     }
     virtual protected void Die()
     {
-        Destroy (gameObject);
+        Destroy(gameObject);
     }
     protected void UpdateHealthUI()
     {

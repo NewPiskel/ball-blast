@@ -8,6 +8,7 @@ TagManager:
   - cannon
   - wall
   - ground
+  - Boulder
   layers:
   - Default
   - TransparentFX

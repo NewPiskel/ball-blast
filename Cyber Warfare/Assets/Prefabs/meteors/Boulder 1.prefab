@@ -196,9 +196,10 @@ GameObject:
   - component: {fileID: 7282108913037684626}
   - component: {fileID: 7282108913037684627}
   - component: {fileID: 7282108913037684628}
+  - component: {fileID: 3289765125883503137}
   m_Layer: 0
   m_Name: Boulder 1
-  m_TagString: Untagged
+  m_TagString: Boulder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -259,8 +260,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: a0a8622184b3fd4498c3d1c4211caf2d, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 35c340683dce7ee4fb706718ac396a96, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -323,3 +324,16 @@ MonoBehaviour:
   health: 14
   textHealth: {fileID: 7282108913029052398}
   jumpForce: 10.5
+  isResultOfFission: 1
+--- !u!114 &3289765125883503137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282108913037684625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dab4913a301b443bd3b857208aede6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
