@@ -195,10 +195,11 @@ GameObject:
   - component: {fileID: 7282108913037684629}
   - component: {fileID: 7282108913037684626}
   - component: {fileID: 7282108913037684627}
-  - component: {fileID: 7071134863399460792}
-  - component: {fileID: -439017192805060049}
-  m_Layer: 0
-  m_Name: BoulderFissionable
+  - component: {fileID: 3825678212498674778}
+  - component: {fileID: -1253263041982405551}
+  - component: {fileID: 1012562814460540476}
+  m_Layer: 10
+  m_Name: MediumBoulder
   m_TagString: Boulder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,7 +214,7 @@ Transform:
   m_GameObject: {fileID: 7282108913037684625}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.71, y: 3.93, z: 0}
-  m_LocalScale: {x: 1.875, y: 1.7499624, z: 1}
+  m_LocalScale: {x: 1.2666, y: 1.16105, z: 0.8444}
   m_Children:
   - {fileID: 7282108913029052396}
   m_Father: {fileID: 0}
@@ -261,7 +262,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 35c340683dce7ee4fb706718ac396a96, type: 3}
-  m_Color: {r: 0.4433962, g: 0.4203898, b: 0.4203898, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -308,7 +309,32 @@ CircleCollider2D:
   m_Offset: {x: 0.00000007947286, y: -0.032152697}
   serializedVersion: 2
   m_Radius: 0.59719706
---- !u!114 &7071134863399460792
+--- !u!114 &3825678212498674778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282108913037684625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dab4913a301b443bd3b857208aede6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1253263041982405551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282108913037684625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1cd0866d2f73245b093e00e574f161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+--- !u!114 &1012562814460540476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -321,22 +347,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7282108913037684626}
-  health: 16
+  health: 13
   textHealth: {fileID: 7282108913029052398}
   jumpForce: 9
   isResultOfFission: 1
   splitsPrefabs:
   - {fileID: 7282108913037684625, guid: fe2c5b73355a8b149b2d54ea405020cb, type: 3}
   - {fileID: 7282108913037684625, guid: b9081f39319a0824792b866b29bcb2e4, type: 3}
---- !u!114 &-439017192805060049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7282108913037684625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47dab4913a301b443bd3b857208aede6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

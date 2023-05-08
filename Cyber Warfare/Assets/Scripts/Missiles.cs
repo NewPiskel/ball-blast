@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 
-public class Missiles : MonoBehaviour
+/*public class Missiles : MonoBehaviour
 {   
         Queue<GameObject> missilesQueue;
 
@@ -85,7 +85,7 @@ public class Missiles : MonoBehaviour
                 DestroyMissile(other.gameObject);
             }
         }
-}
+}*/
 
 
 

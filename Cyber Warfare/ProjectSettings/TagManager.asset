@@ -19,9 +19,9 @@ TagManager:
   - Collider
   - Missile
   - Player
-  - 
-  - 
-  - 
+  - Projectile
+  - Boulder
+  - Shredder
   - 
   - 
   - 

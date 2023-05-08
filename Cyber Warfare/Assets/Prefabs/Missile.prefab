@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 6052885334830845687}
   - component: {fileID: 6052885334830845684}
   - component: {fileID: 6052885334830845685}
-  m_Layer: 0
+  - component: {fileID: 7756974435185618131}
+  - component: {fileID: -6237234902149438388}
+  m_Layer: 7
   m_Name: Missile
   m_TagString: missile
   m_Icon: {fileID: 0}
@@ -74,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 852829e48ee849547a875a0a162e500f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e5d746375073354d98e1eb6274fa297, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -116,7 +118,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.000000014901161, y: 0.006639987}
@@ -132,3 +134,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3390285, y: 0.8096443}
   m_EdgeRadius: 0
+--- !u!114 &7756974435185618131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6052885334830845683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1cd0866d2f73245b093e00e574f161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+--- !u!114 &-6237234902149438388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6052885334830845683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d795fd6ce619048bc4201afbea85e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileTime: 10

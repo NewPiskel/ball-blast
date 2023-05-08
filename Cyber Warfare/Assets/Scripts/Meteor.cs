@@ -57,7 +57,7 @@ public class Meteor : MonoBehaviour
         {
 
             TakeDamage(1);
-            Missiles.Instance.DestroyMissile(other.gameObject);
+            /*Missiles.Instance.DestroyMissile(other.gameObject);*/
 
         }
         if (!isShowing && other.tag.Equals("wall"))
@@ -104,5 +104,78 @@ public class Meteor : MonoBehaviour
     protected void UpdateHealthUI()
     {
         textHealth.text = health.ToString();
+    }
+}
+
+public class Enemy : MonoBehaviour
+{
+    [Header("Enemy Stats")]
+    [SerializeField] int health = 100;
+    [SerializeField] int scoreValue = 10;
+
+    [Header("Shooting Config")]
+    [SerializeField] float shotCounter;
+    [SerializeField] float minTimeBetweenShots = 0.2f;
+    [SerializeField] float maxTimeBetweenShots = 2f;
+    [SerializeField] GameObject projectile;
+    [SerializeField] float projectilespeed = 10f;
+
+    [Header("Effects")]
+    [SerializeField] float durationOfExplosion = 1f;
+    [SerializeField] GameObject explosionVFX;
+    [SerializeField] AudioClip deathSFX;
+    [SerializeField][Range(0, 1)] float deathSFXVolume = 0.75f;
+    [SerializeField] AudioClip projectileSFX;
+    [SerializeField][Range(0, 1)] float projectileSFXVolume;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        CountDownAndShoot();
+    }
+
+    private void CountDownAndShoot()
+    {
+        shotCounter -= Time.deltaTime;
+        if (shotCounter < 0f)
+        {
+            Fire();
+            shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
+        }
+    }
+
+    private void Fire()
+    {
+        GameObject laser = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
+        laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectilespeed);
+        AudioSource.PlayClipAtPoint(projectileSFX, Camera.main.transform.position, projectileSFXVolume);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        DamageDealer otherDamageDealer = other.gameObject.GetComponent<DamageDealer>();
+        if (otherDamageDealer == null) { return; }
+        ProcessHit(otherDamageDealer);
+    }
+
+    private void ProcessHit(DamageDealer otherDamageDealer)
+    {
+        health -= otherDamageDealer.GetDamage();
+        otherDamageDealer.Hit();
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }
